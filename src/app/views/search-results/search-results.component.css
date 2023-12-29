@@ -1,0 +1,115 @@
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 15px 0 30px;
+  min-height: 80vh;
+}
+
+.container h1 {
+  padding: 25px 55px 45px;
+}
+
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flight-list-link {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  box-shadow: 0px 4px 14px -12px rgba(34, 34, 34, 0.53);
+  padding: 9px 18px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.flight-list-link:hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.city-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+svg {
+  width: 26px;
+  height: 26px;
+}
+
+.svg-clock {
+  width: 19px;
+  height: 19px;
+}
+
+.svg-box {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.flight-cities {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.more-details-button {
+  font-size: 14px;
+  padding: 14px 30px;
+  text-align: center;
+  border: none;
+  background: #0b2274;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.more-details-button:hover {
+  background: #071958;
+  transition: 0.2s;
+}
+
+.no-results {
+  margin-top: 25px;
+}
+
+.pagination {
+  margin: 10px auto 0;
+  background: white;
+  padding: 1.2rem;
+  text-align: center;
+}
+
+.button-page {
+  border: solid 1px #b9b9b9;
+  background: white;
+  border-radius: 0.2rem;
+  color: #686868;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  padding: 0.5rem 0.9rem;
+  cursor: pointer;
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+  &:hover {
+    color: #494949;
+    border: solid 1px #272a2b;
+    transition: 0.3s;
+  }
+}
+
+span {
+  display: inline-block;
+  margin: 0 0.5rem;
+}

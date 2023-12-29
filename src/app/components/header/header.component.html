@@ -1,0 +1,40 @@
+<header>
+    <div class="container-nav">
+        <nav>
+            <a class="logo-box" [routerLink]="['/']">
+                <img class="logo" src="/assets/logo.png" alt="VoeFacil Logo">
+            </a>
+            <ul class="nav-list" [class.active]="navMenuActive">
+                <li class="nav-item">
+                    <a class="nav-link" (click)="closeNavMenu()" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 14 17" fit=""
+                            preserveAspectRatio="xMidYMid meet" focusable="false">
+                            <path fill-rule="evenodd"
+                                d="M6.997 7.637C4.92 7.634 3.243 5.926 3.243 3.82 3.243 1.716 4.921.002 6.997 0c2.08 0 3.76 1.716 3.76 3.82 0 2.106-1.68 3.814-3.76 3.817zM0 17v-3.52c0-2.642 2.129-4.805 4.73-4.805h4.54c2.601 0 4.73 2.163 4.73 4.805V17H0z">
+                            </path>
+                        </svg>
+                        Login
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" (click)="closeNavMenu()" href="#">
+
+                        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 20 19" fit=""
+                            preserveAspectRatio="xMidYMid meet" focusable="false">
+                            <path
+                                d="M0 18.517V14.89a4.963 4.963 0 0 1 4.949-4.95h4.748a4.963 4.963 0 0 1 4.949 4.95v3.627H0zM19.281 5.732a.72.72 0 0 1 0 1.438h-2.275l-.04.04v2.275a.72.72 0 0 1-1.438 0V7.21l-.04-.04h-2.275a.72.72 0 0 1 0-1.437h2.275l.039-.04V3.417a.72.72 0 0 1 1.439 0v2.276l.04.039h2.275zM7.32 8.87a3.933 3.933 0 0 1-3.929-3.933A3.937 3.937 0 0 1 7.321 1a3.935 3.935 0 0 1 0 7.87H7.32z">
+                            </path>
+                        </svg>
+                        Cadrastro
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburger" [class.active]="hamburgerActive" (click)="toggleHamburger()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </div>
+</header>

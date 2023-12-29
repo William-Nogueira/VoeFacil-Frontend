@@ -1,0 +1,35 @@
+.container {
+  margin: 5px 0;
+  background-color: #fff;
+  box-shadow: 0 2px 2px #0000003d, 0 0 2px #0000001f;
+  display: flex;
+  padding: 16px;
+}
+
+.container-2 {
+  max-width: 1050px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.svg-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+}
+svg {
+  width: 15px;
+}
+
+.svg-plane {
+  width: 20px;
+}
+
+.box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}

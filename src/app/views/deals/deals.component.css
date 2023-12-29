@@ -1,0 +1,96 @@
+.container {
+  max-width: 1050px;
+  margin: auto;
+  padding: 0 15px 45px;
+}
+
+.deals-header {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-top: 45px;
+}
+
+svg {
+  width: 25px;
+  height: 25px;
+}
+
+.deals-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.deals-list-link {
+  width: 100%;
+  background-color: white;
+  display: flex;
+  box-shadow: 0px 4px 14px -12px rgba(34, 34, 34, 0.53);
+  padding: 9px 20px;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 15px;
+}
+
+.deals-list-link:hover {
+  transition: all 0.3s ease;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.city-container {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  height: 60px;
+}
+
+.deals-list-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.deals-list-title {
+  margin-bottom: 2px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.more-details-button {
+  font-size: 14px;
+  padding: 14px 30px;
+  border: none;
+  background: #0b2274;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.more-details-button:hover {
+  background: #071958;
+  transition: 0.2s;
+}
+
+.more-deals-button {
+  margin-top: 20px;
+  font-size: 14px;
+  padding: 14px;
+  width: 220px;
+  text-align: center;
+  border: none;
+  background: #0b2274;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.more-deals-button:hover {
+  background: #071958;
+  transition: 0.2s;
+}
+
+.no-results {
+  margin-top: 25px;
+}
