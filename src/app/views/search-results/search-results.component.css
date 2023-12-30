@@ -32,9 +32,10 @@
 }
 
 .city-container {
+  width: 340px;
   display: flex;
   align-items: center;
-  gap: 25px;
+  justify-content: center;
 }
 
 svg {
@@ -58,12 +59,19 @@ svg {
   display: flex;
   align-items: center;
   flex-direction: row;
-  gap: 30px;
+  gap: 20px;
+}
+
+.city-titles {
+  text-align: center;
 }
 
 .more-details-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   font-size: 14px;
-  padding: 14px 30px;
+  padding: 14px 20px 14px 30px;
   text-align: center;
   border: none;
   background: #0b2274;
@@ -112,4 +120,47 @@ svg {
 span {
   display: inline-block;
   margin: 0 0.5rem;
+}
+
+.no-results {
+  padding-top: 30px;
+}
+
+.back-link {
+  color: rgb(0, 0, 209);
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 22px;
+}
+
+a {
+  color: black;
+}
+.flight-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.flight-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background-color: #f0f0f0;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+.header-departure,
+.header-arrival,
+.header-company,
+.header-date,
+.header-duration,
+.header-buy {
+  flex: 1;
+  text-align: center;
 }

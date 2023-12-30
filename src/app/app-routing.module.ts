@@ -7,7 +7,7 @@ import { PassengerComponent } from './containers/passenger/passenger.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'flights', component: FlightsComponent },
-  { path: 'passenger', component: PassengerComponent },
+  { path: ':id/passenger', component: PassengerComponent },
 ];
 
 @NgModule({

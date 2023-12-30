@@ -16,7 +16,7 @@
             </svg><span>Reservar um Voo</span></div>
     </div>
 
-    <form class="search-box">
+    <form class="search-box" (submit)="onSearch($event)">
         <svg class="svg-plane-1" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 22 11"
             fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
             <path fill-rule="evenodd"
@@ -30,17 +30,18 @@
             </path>
         </svg>
         <div class="search-row">
-            <input class="search-bar" type="text" name="partida" placeholder="Partida" required>
-            <input class="search-bar" type="text" name="destino" placeholder="Destino" required>
+            <input class="search-bar" type="text" name="partida" placeholder="Partida" required [(ngModel)]="origin">
+            <input class="search-bar" type="text" name="destino" placeholder="Destino" required
+                [(ngModel)]="destination">
         </div>
         <div class="search-row">
-            <input class="date-bar" type="date" id="date" name="trip-start" value="{{currentDate | date:'yyyy-MM-dd'}}"
-                min="{{currentDate | date:'yyyy-MM-dd'}}" />
-            <select name="tipo" class="dropdown">
-                <option [selected] value="ECONOMY">Economy</option>
-                <option value="FIRST_CLASS">First Class</option>
+            <input class="date-bar" type="date" id="date" name="trip-start" [value]="currentDate | date:'yyyy-MM-dd'"
+                min="{{ currentDate | date:'yyyy-MM-dd' }}" [(ngModel)]="date">
+            <select name="tipo" class="dropdown" [(ngModel)]="seatType">
+                <option [value]="'ECONOMY'">Economy</option>
+                <option [value]="'FIRST_CLASS'">First Class</option>
             </select>
-            <button class="buscar" type="button">Buscar</button>
+            <button class="buscar" type="submit">Buscar</button>
         </div>
     </form>
 </div>

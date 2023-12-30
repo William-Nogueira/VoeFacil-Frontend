@@ -1,49 +1,77 @@
-<div class="container">
-    <h1>Cidade Departure > Cidade Arrival</h1>
-    <div class="flight-list">
-        <a class="flight-list-link">
-            <div class="city-container">
-                <div class="flight-cities">
-                    <h4>Cidade Departure</h4> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                        viewBox="0 0 21 17" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-                        <path
-                            d="M18.214 7.505c-1.325-.09-3.24-.105-5.368-.07L8.955.994H7.092L8.543 7.56a201.37 201.37 0 0 0-5.354.282v-.026L2.005 5.888H.5V12.1h1.505l1.184-1.93v-.024c1.62.108 3.476.206 5.354.282l-1.451 6.566h1.863l3.891-6.441c2.128.035 4.043.02 5.368-.07 1.006-.07 2.242-.67 2.286-1.489-.044-.82-1.28-1.42-2.286-1.489">
+<ng-container *ngIf="flights.length > 0; else noResults">
+    <div class="container">
+        <h1>{{ departureCity }}  >  {{ arrivalCity }}</h1>
+        <div class="flight-list">
+            <div class="flight-list-header">
+                <p class="header-departure">Saída</p>
+                <p class="header-arrival">Destino</p>
+                <p class="header-company">Companhia</p>
+                <p class="header-date">Data</p>
+                <p class="header-duration">Duração</p>
+                <p class="header-buy">Reservar</p>
+            </div>
+            <a class="flight-list-link" *ngFor="let flight of flights" [routerLink]="['/',flight.id,'passenger']">
+                <div class="city-container">
+                    <div class="flight-cities">
+                        <div class="city-titles">
+                            <h4>{{flight.departureAirport.city}}</h4>
+                            <h4>{{flight.departureAirport.name}} ({{flight.departureAirport.code}})</h4>
+                        </div> <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 21 17"
+                            fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                            <path
+                                d="M18.214 7.505c-1.325-.09-3.24-.105-5.368-.07L8.955.994H7.092L8.543 7.56a201.37 201.37 0 0 0-5.354.282v-.026L2.005 5.888H.5V12.1h1.505l1.184-1.93v-.024c1.62.108 3.476.206 5.354.282l-1.451 6.566h1.863l3.891-6.441c2.128.035 4.043.02 5.368-.07 1.006-.07 2.242-.67 2.286-1.489-.044-.82-1.28-1.42-2.286-1.489">
+                            </path>
+                        </svg>
+                        <div class="city-titles">
+                            <h4>{{flight.arrivalAirport.city}}</h4>
+                            <h4>{{flight.arrivalAirport.name}} ({{flight.arrivalAirport.code}})</h4>
+                        </div>
+                    </div>
+                </div>
+                <p>{{flight.aircraft.airline}}</p>
+                <div class="svg-box"><svg class="svg-clock" xmlns:dc="http://purl.org/dc/elements/1.1/"
+                        xmlns:cc="http://creativecommons.org/ns#"
+                        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                        xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 -256 1850 1850"
+                        id="svg3025" version="1.1" inkscape:version="0.48.3.1 r9886" width="100%" height="100%"
+                        sodipodi:docname="calendar_font_awesome.svg">
+                        <defs id="defs3033" />
+                        <g transform="matrix(1,0,0,-1,91.118644,1297.8644)" id="g3027">
+                            <path
+                                d="M 128,-128 H 416 V 160 H 128 v -288 z m 352,0 H 800 V 160 H 480 V -128 z M 128,224 H 416 V 544 H 128 V 224 z m 352,0 H 800 V 544 H 480 V 224 z M 128,608 H 416 V 896 H 128 V 608 z m 736,-736 h 320 V 160 H 864 V -128 z M 480,608 H 800 V 896 H 480 V 608 z m 768,-736 h 288 V 160 H 1248 V -128 z M 864,224 h 320 V 544 H 864 V 224 z m -352,864 v 288 q 0,13 -9.5,22.5 -9.5,9.5 -22.5,9.5 h -64 q -13,0 -22.5,-9.5 Q 384,1389 384,1376 v -288 q 0,-13 9.5,-22.5 9.5,-9.5 22.5,-9.5 h 64 q 13,0 22.5,9.5 9.5,9.5 9.5,22.5 z m 736,-864 h 288 V 544 H 1248 V 224 z M 864,608 h 320 V 896 H 864 V 608 z m 384,0 h 288 V 896 H 1248 V 608 z m 32,480 v 288 q 0,13 -9.5,22.5 -9.5,9.5 -22.5,9.5 h -64 q -13,0 -22.5,-9.5 -9.5,-9.5 -9.5,-22.5 v -288 q 0,-13 9.5,-22.5 9.5,-9.5 22.5,-9.5 h 64 q 13,0 22.5,9.5 9.5,9.5 9.5,22.5 z m 384,64 V -128 q 0,-52 -38,-90 -38,-38 -90,-38 H 128 q -52,0 -90,38 -38,38 -38,90 v 1280 q 0,52 38,90 38,38 90,38 h 128 v 96 q 0,66 47,113 47,47 113,47 h 64 q 66,0 113,-47 47,-47 47,-113 v -96 h 384 v 96 q 0,66 47,113 47,47 113,47 h 64 q 66,0 113,-47 47,-47 47,-113 v -96 h 128 q 52,0 90,-38 38,-38 38,-90 z"
+                                id="path3029" inkscape:connector-curvature="0" style="fill:currentColor" />
+                        </g>
+                    </svg>
+                    <p>{{ flight.departureTime | datePipe }}</p>
+                </div>
+                <div class="svg-box"><svg class="svg-clock" xmlns="http://www.w3.org/2000/svg" width="100%"
+                        height="100%" viewBox="0 0 16 16" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
+                        <path fill-rule="evenodd"
+                            d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-1.2A6.8 6.8 0 1 0 8 1.2a6.8 6.8 0 0 0 0 13.6zm4.569-8.15a.69.69 0 0 1-.322.422L8.36 9.316a.31.31 0 0 1-.04.018.532.532 0 0 1-.128.048c-.022.006-.043.012-.067.016a.978.978 0 0 1-.14.008c-.017 0-.034-.003-.058-.006a.826.826 0 0 1-.077-.013.967.967 0 0 1-.125-.043 1.554 1.554 0 0 1-.065-.035l-.046-.03a.58.58 0 0 1-.07-.057.63.63 0 0 1-.084-.092.546.546 0 0 0-.034-.048l-.01-.016-.003-.004a.346.346 0 0 1-.02-.042l-.027-.06a.616.616 0 0 1-.02-.066.494.494 0 0 1-.024-.144.274.274 0 0 1-.003-.036v-6.01a.695.695 0 0 1 1.389 0v4.809l2.844-1.643a.693.693 0 0 1 1.017.78z">
                         </path>
                     </svg>
-                    <h4>Cidade Arrival</h4>
+                    <p>{{ flight.durationFormatted }}</p>
                 </div>
-            </div>
-            <p>Airline</p>
-            <div class="svg-box"><svg class="svg-clock" xmlns:dc="http://purl.org/dc/elements/1.1/"
-                    xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-                    xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg"
-                    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-                    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 -256 1850 1850" id="svg3025"
-                    version="1.1" inkscape:version="0.48.3.1 r9886" width="100%" height="100%"
-                    sodipodi:docname="calendar_font_awesome.svg">
-                    <defs id="defs3033" />
-                    <g transform="matrix(1,0,0,-1,91.118644,1297.8644)" id="g3027">
-                        <path
-                            d="M 128,-128 H 416 V 160 H 128 v -288 z m 352,0 H 800 V 160 H 480 V -128 z M 128,224 H 416 V 544 H 128 V 224 z m 352,0 H 800 V 544 H 480 V 224 z M 128,608 H 416 V 896 H 128 V 608 z m 736,-736 h 320 V 160 H 864 V -128 z M 480,608 H 800 V 896 H 480 V 608 z m 768,-736 h 288 V 160 H 1248 V -128 z M 864,224 h 320 V 544 H 864 V 224 z m -352,864 v 288 q 0,13 -9.5,22.5 -9.5,9.5 -22.5,9.5 h -64 q -13,0 -22.5,-9.5 Q 384,1389 384,1376 v -288 q 0,-13 9.5,-22.5 9.5,-9.5 22.5,-9.5 h 64 q 13,0 22.5,9.5 9.5,9.5 9.5,22.5 z m 736,-864 h 288 V 544 H 1248 V 224 z M 864,608 h 320 V 896 H 864 V 608 z m 384,0 h 288 V 896 H 1248 V 608 z m 32,480 v 288 q 0,13 -9.5,22.5 -9.5,9.5 -22.5,9.5 h -64 q -13,0 -22.5,-9.5 -9.5,-9.5 -9.5,-22.5 v -288 q 0,-13 9.5,-22.5 9.5,-9.5 22.5,-9.5 h 64 q 13,0 22.5,9.5 9.5,9.5 9.5,22.5 z m 384,64 V -128 q 0,-52 -38,-90 -38,-38 -90,-38 H 128 q -52,0 -90,38 -38,38 -38,90 v 1280 q 0,52 38,90 38,38 90,38 h 128 v 96 q 0,66 47,113 47,47 113,47 h 64 q 66,0 113,-47 47,-47 47,-113 v -96 h 384 v 96 q 0,66 47,113 47,47 113,47 h 64 q 66,0 113,-47 47,-47 47,-113 v -96 h 128 q 52,0 90,-38 38,-38 38,-90 z"
-                            id="path3029" inkscape:connector-curvature="0" style="fill:currentColor" />
-                    </g>
-                </svg>
-                <p> Time</p>
-            </div>
-            <div class="svg-box"><svg class="svg-clock" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
-                    viewBox="0 0 16 16" fit="" preserveAspectRatio="xMidYMid meet" focusable="false">
-                    <path fill-rule="evenodd"
-                        d="M8 16A8 8 0 1 1 8 0a8 8 0 0 1 0 16zm0-1.2A6.8 6.8 0 1 0 8 1.2a6.8 6.8 0 0 0 0 13.6zm4.569-8.15a.69.69 0 0 1-.322.422L8.36 9.316a.31.31 0 0 1-.04.018.532.532 0 0 1-.128.048c-.022.006-.043.012-.067.016a.978.978 0 0 1-.14.008c-.017 0-.034-.003-.058-.006a.826.826 0 0 1-.077-.013.967.967 0 0 1-.125-.043 1.554 1.554 0 0 1-.065-.035l-.046-.03a.58.58 0 0 1-.07-.057.63.63 0 0 1-.084-.092.546.546 0 0 0-.034-.048l-.01-.016-.003-.004a.346.346 0 0 1-.02-.042l-.027-.06a.616.616 0 0 1-.02-.066.494.494 0 0 1-.024-.144.274.274 0 0 1-.003-.036v-6.01a.695.695 0 0 1 1.389 0v4.809l2.844-1.643a.693.693 0 0 1 1.017.78z">
-                    </path>
-                </svg>
-                <p> Duration</p>
-            </div>
-            <a class="more-details-button">Melhor Tarifa<br>(Preço)</a>
-        </a>
+                <a [routerLink]="['/',flight.id,'passenger']" class="more-details-button">
+                    <div> Melhor Tarifa<br>R$
+                        {{flight.basePrice}},00</div>
+                    <p class="icon">></p>
+                </a>
+            </a>
+        </div>
+        <div class="pagination">
+            <button class="button-page">Anterior</button>
+            <span>1 de 10</span>
+            <button class="button-page">Próxima</button>
+        </div>
     </div>
-    <div class="pagination">
-        <button class="button-page">Anterior</button>
-        <span>1 de 10</span>
-        <button class="button-page">Próxima</button>
+</ng-container>
+<ng-template #noResults>
+    <div class="container ">
+        <a class="back-link" (click)="back()">
+            &lt;  Voltar</a>
+        <h2 class="no-results">Nenhum voo encontrado</h2>
     </div>
-</div>
+</ng-template>
