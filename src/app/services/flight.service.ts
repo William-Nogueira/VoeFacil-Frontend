@@ -20,6 +20,11 @@ export class FlightService {
     return this.http.get<FlightResponse>(this.apiUrl);
   }
 
+  getFlightById(flightId: string): Observable<Flight> {
+    const flightUrl = `${this.apiUrl}/${flightId}`;
+    return this.http.get<Flight>(flightUrl);
+  }
+
   getAllDeals(): Observable<FlightResponse> {
     const dealsUrl = `${this.apiUrl}/deals`;
     return this.http.get<FlightResponse>(dealsUrl);

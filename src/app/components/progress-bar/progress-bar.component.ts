@@ -9,7 +9,7 @@ export class ProgressBarComponent implements OnInit {
   @Input() planeColor: string = '#646774';
   @Input() passengerColor: string = '#646774';
   @Input() seatColor: string = '#646774';
-  @Input() paymentColor: string = '#646774';
+  @Input() ticketColor: string = '#646774';
 
   constructor() {}
 

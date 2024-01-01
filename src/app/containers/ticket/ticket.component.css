@@ -1,0 +1,8 @@
+@media print {
+  .header,
+  #header,
+  #progress-bar,
+  #footer {
+    display: none !important;
+  }
+}

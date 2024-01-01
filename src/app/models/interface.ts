@@ -42,6 +42,46 @@ export interface Aircraft {
   capacity: number;
 }
 
+export interface Passenger {
+  id: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+}
+
+export interface SeatFlight {
+  seatId: string;
+  seatAvailability: boolean;
+  seatNumber: number;
+  seatClass: string;
+}
+
+export interface Seat {
+  id: string;
+  seatNumber: number;
+  seatClass: string;
+  aircraft: Aircraft;
+}
+
+export interface FlightTicket {
+  id?: string;
+  flightId: string;
+  seatId: string;
+  passengerId: string;
+}
+
+export interface GetFlightTicket {
+  id: string;
+  totalPrice: number;
+  ticketNumber: string;
+  reservationDate: string;
+  canceled: boolean;
+  flight: Flight;
+  seat: Seat;
+  passenger: Passenger;
+}
+
 export interface Pageable {
   pageNumber: number;
   pageSize: number;

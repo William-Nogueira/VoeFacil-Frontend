@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -17,6 +17,11 @@ import { ProgressBarComponent } from './components/progress-bar/progress-bar.com
 import { PassengerComponent } from './containers/passenger/passenger.component';
 import { PassengerInfoComponent } from './views/passenger-info/passenger-info.component';
 import { DatePipe } from './pipes/date-pipe.pipe';
+import { SeatsComponent } from './containers/seats/seats.component';
+import { SeatPickerComponent } from './views/seat-picker/seat-picker.component';
+import { TicketComponent } from './containers/ticket/ticket.component';
+import { FlightTicketComponent } from './views/flight-ticket/flight-ticket.component';
+import { DeparturePipe } from './pipes/departure.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +37,11 @@ import { DatePipe } from './pipes/date-pipe.pipe';
     PassengerComponent,
     PassengerInfoComponent,
     DatePipe,
+    SeatsComponent,
+    SeatPickerComponent,
+    TicketComponent,
+    FlightTicketComponent,
+    DeparturePipe,
   ],
   imports: [
     BrowserModule,
@@ -39,6 +49,7 @@ import { DatePipe } from './pipes/date-pipe.pipe';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

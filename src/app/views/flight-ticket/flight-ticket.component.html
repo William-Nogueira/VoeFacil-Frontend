@@ -1,0 +1,132 @@
+<div class="container">
+    <div class="header">
+        <a class="back-link" (click)="back()">&lt; Voltar para Home</a>
+        <h1>Cartão de Embarque</h1>
+        <h2>Olá {{ passenger?.firstName }}! </h2>
+        <p>O seu voo para {{ flight?.departureAirport.city }} foi agendado com sucesso! Retire aqui o seu cartão de
+            embarque.</p>
+    </div>
+    <div class="ticket-container">
+        <div class="ticket-box">
+            <div class="ticket-header">
+                <div class="svg-box"> <svg _ngcontent-ikm-c52="" xmlns="http://www.w3.org/2000/svg" fill="white"
+                        width="100%" height="100%" viewBox="0 0 21 17" fit="" preserveAspectRatio="xMidYMid meet"
+                        focusable="false">
+                        <path _ngcontent-ikm-c52=""
+                            d="M18.214 7.505c-1.325-.09-3.24-.105-5.368-.07L8.955.994H7.092L8.543 7.56a201.37 201.37 0 0 0-5.354.282v-.026L2.005 5.888H.5V12.1h1.505l1.184-1.93v-.024c1.62.108 3.476.206 5.354.282l-1.451 6.566h1.863l3.891-6.441c2.128.035 4.043.02 5.368-.07 1.006-.07 2.242-.67 2.286-1.489-.044-.82-1.28-1.42-2.286-1.489">
+                        </path>
+                    </svg>
+                    <h3> Cartão de Embarque</h3>
+                </div>
+
+                <p> <ng-container *ngIf="seat?.seatClass == 'FIRST_CLASS'; else economy">
+                        First Class
+                    </ng-container>
+                    <ng-template #economy>
+                        Economy
+                    </ng-template>
+                </p>
+            </div>
+            <div class="ticket-details">
+                <div class="ticket-details-container">
+                    <div>
+                        <img class="barcode" src="/assets/barcode.png" alt="">
+                    </div>
+                    <div>
+                        <div class="margin-bottom">
+                            <p>Nome do Passageiro</p>
+                            <p class="font-weight">{{ passenger?.firstName }} {{ passenger?.lastName }}</p>
+                        </div>
+                        <div class="margin-bottom">
+                            <p>De</p>
+                            <p class="font-weight">{{ flight?.departureAirport.city }}</p>
+                        </div>
+                        <div class="margin-bottom">
+                            <p>Para</p>
+                            <p class="font-weight">{{ flight?.arrivalAirport.city }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="margin-bottom">
+                        <p>Data</p>
+                        <p class="font-weight">{{ flight?.departureTime | datePipe }}</p>
+                    </div>
+                    <div class="margin-bottom">
+                        <p>Voo</p>
+                        <p class="font-weight">{{ flight?.number }}</p>
+                    </div>
+                    <div class="margin-bottom">
+                        <p>Airline</p>
+                        <p class="font-weight">{{ flight?.aircraft.airline }}</p>
+                    </div>
+
+                </div>
+                <div class="ticket-details-row-2">
+                    <div class="margin-bottom">
+                        <p>Assento</p>
+                        <p class="font-weight">{{ seat?.seatNumber }}</p>
+                    </div>
+                    <div class="margin-bottom">
+                        <p>Duração</p>
+                        <p class="font-weight">{{ durationFormatted }}</p>
+                    </div>
+                    <div class="margin-bottom">
+                        <p>Embarque</p>
+                        <p class="font-weight">{{ flight?.departureTime | departurePipe }}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="ticket-box-2">
+            <div class="ticket-header-2">
+                <h3>Cartão de Embarque</h3>
+                <p> <ng-container *ngIf="seat?.seatClass == 'FIRST_CLASS'; else economy">
+                        First Class
+                    </ng-container>
+                    <ng-template #economy>
+                        Economy
+                    </ng-template>
+                </p>
+            </div>
+            <div class="ticket-details-2">
+                <div>
+                    <p>Nome do Passageiro</p>
+                    <p class="font-weight">{{ passenger?.firstName }} {{ passenger?.lastName }}</p>
+                </div>
+                <div>
+                    <p>De</p>
+                    <p class="font-weight">{{ flight?.departureAirport.city }}</p>
+                </div>
+                <div>
+                    <p>Para</p>
+                    <p class="font-weight">{{ flight?.arrivalAirport.city }}</p>
+                </div>
+                <div class="ticket-details-2-div">
+                    <div class="ticket-details-2-div-1">
+                        <p>Data</p>
+                        <p class="font-weight">{{ flight?.departureTime | datePipe }}</p>
+                    </div>
+
+                    <div>
+                        <p>Voo</p>
+                        <p class="font-weight">{{ flight?.number }}</p>
+                    </div>
+                </div>
+                <div class="ticket-details-2-div">
+                    <div class="ticket-details-2-div-1">
+                        <p>Assento</p>
+                        <p class="font-weight">{{ seat?.seatNumber }}</p>
+                    </div>
+                    <div>
+                        <p>Embarque</p>
+                        <p class="font-weight">{{ flight?.departureTime | departurePipe }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <button (click)="printTicket()">Imprimir Ticket</button>
+</div>
